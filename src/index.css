@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Luxury Arabic-inspired palette */
+    --background: 30 20% 97%;
+    --foreground: 20 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 15% 15%;
+
+    /* Rich gold primary */
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Deep brown secondary */
+    --secondary: 16 25% 20%;
+    --secondary-foreground: 30 20% 97%;
+
+    --muted: 30 15% 90%;
+    --muted-foreground: 20 10% 45%;
+
+    /* Warm cream accent */
+    --accent: 40 40% 92%;
+    --accent-foreground: 20 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-luxury: linear-gradient(135deg, hsl(43 74% 49%), hsl(38 90% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(16 25% 20%), hsl(20 20% 12%));
+    --gradient-subtle: linear-gradient(180deg, hsl(30 20% 97%), hsl(30 15% 94%));
+
+    /* Shadows */
+    --shadow-luxury: 0 10px 30px -5px hsl(43 74% 49% / 0.3);
+    --shadow-elegant: 0 4px 20px -2px hsl(20 15% 15% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 20 20% 12%;
+    --foreground: 30 20% 97%;
+
+    --card: 20 20% 15%;
+    --card-foreground: 30 20% 97%;
+
+    --popover: 20 20% 15%;
+    --popover-foreground: 30 20% 97%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 16 25% 25%;
+    --secondary-foreground: 30 20% 97%;
+
+    --muted: 20 15% 25%;
+    --muted-foreground: 30 10% 60%;
+
+    --accent: 40 30% 25%;
+    --accent-foreground: 30 20% 97%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 30 20% 97%;
+
+    --border: 20 15% 25%;
+    --input: 20 15% 25%;
+    --ring: 43 74% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "kern" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-luxury {
+    background: var(--gradient-luxury);
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
